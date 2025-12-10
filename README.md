@@ -2,8 +2,9 @@
 ### Automated Weekly Lock Battery Check Notifications  
 ### *(Node.js + DynamoDB + PostgreSQL + Firebase Cloud Messaging)*
 
-This project automates weekly reminders for users who have **not checked their smart lock's battery level in over 30 days**.  
-It integrates **DynamoDB**, **PostgreSQL**, **Firebase Cloud Messaging (FCM)**, and a **click-tracking microservice** to measure user engagement.
+This project is built to automatically remind users to check the battery level of their smart locks.  
+The idea is simple: if a lock has not reported a battery check for more than 30 days, the system sends a notification to all users linked to that lock.  
+To support this workflow, the system uses DynamoDB, PostgreSQL, Firebase Cloud Messaging (FCM), and a small click-tracking service.
 ---
 
 # Battery-notify (Node.js)
