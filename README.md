@@ -49,18 +49,17 @@ Runs on:
 
 # 🧱 System Architecture
 
+## 🧱 System Architecture
+
 ```mermaid
 flowchart TD
+  A["DynamoDB locks table"] --> B["Scan stale locks (30+ days)"]
+  B --> C["PostgreSQL lock_user_mapping"]
+  C --> D["Notification Sender (Node.js + FCM)"]
+  D --> E["User receives push notification"]
+  E --> F["Click Tracking Server (Express API)"]
+  F --> G["PostgreSQL Analytics Tables"]
 
-A[DynamoDB <br> locks table] --> B[Scan stale locks <br> (30+ days)]
-B --> C[PostgreSQL <br> lock_user_mapping]
-C --> D[Notification Sender <br> Node.js + FCM]
-D --> E[User receives push notification]
-E --> F[Click Tracking Server <br> Express API]
-F --> G[PostgreSQL <br> Analytics Tables]
-```
-
----
 
 # 📂 Project Structure
 
