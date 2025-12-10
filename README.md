@@ -4,13 +4,6 @@
 
 This project automates weekly reminders for users who have **not checked their smart lock's battery level in over 30 days**.  
 It integrates **DynamoDB**, **PostgreSQL**, **Firebase Cloud Messaging (FCM)**, and a **click-tracking microservice** to measure user engagement.
-
-Designed for:
-- IoT Smart Lock Platforms  
-- Home Automation Systems  
-- Predictive Maintenance Workflows  
-- Notification Campaign Analytics  
-
 ---
 
 # ⭐ Features
@@ -46,19 +39,6 @@ Runs on:
 - GitHub Actions  
 
 ---
-
-# 🧱 System Architecture
-
-## 🧱 System Architecture
-
-```mermaid
-flowchart TD
-  A["DynamoDB locks table"] --> B["Scan stale locks (30+ days)"]
-  B --> C["PostgreSQL lock_user_mapping"]
-  C --> D["Notification Sender (Node.js + FCM)"]
-  D --> E["User receives push notification"]
-  E --> F["Click Tracking Server (Express API)"]
-  F --> G["PostgreSQL Analytics Tables"]
 
 
 # 📂 Project Structure
