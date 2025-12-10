@@ -1,0 +1,23 @@
+{
+  "name": "battery-notify",
+  "version": "0.1.0",
+  "description": "Weekly battery-check notification sender + click tracker (Node.js)",
+  "main": "src/send_battery_notifications.js",
+  "scripts": {
+    "start": "node src/send_battery_notifications.js",
+    "tracker": "node tracker/index.js",
+    "scan": "node src/scan_and_map.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/util-dynamodb": "^3.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "firebase-admin": "^11.0.0",
+    "pg": "^8.10.0",
+    "p-limit": "^3.1.0",
+    "uuid": "^9.0.0"
+  }
+}
