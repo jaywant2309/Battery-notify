@@ -67,8 +67,7 @@ battery-notify/
 ├── docker-compose.yml                  # Local Postgres + DynamoDB setup
 ├── package.json
 ├── .env.example
-├── README.md
-└── create_project.sh
+└── README.md
 ```
 
 ---
