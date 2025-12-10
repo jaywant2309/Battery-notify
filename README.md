@@ -23,26 +23,25 @@ Use `scan` script to just print stale locks & mappings during development: `npm 
 # ⭐ Features
 
 ### ✔ Automated Weekly Battery Reminder Notifications  
+The project includes a script that scans stale locks and notifies users automatically.
 - Scans DynamoDB for locks with old battery timestamps.  
 - Fetches mapped users from PostgreSQL.  
 - Sends personalized FCM notifications.
 
 ### ✔ Firebase Push Notifications  
-Each notification includes:  
-- Title & message  
+Notifications include a title, a short message, and a link for tracking user clicks.  
 - Deep link & web fallback  
 - Tracking parameters (lock_id, user_id, notification_id)
 
 ### ✔ Click Tracking Server (Express)  
-Tracks:
-- Notification clicks  
+This small Express server logs user activity when they click a notification, which helps evaluate engagement.
 - User engagement  
 - Device + browser metadata  
 
 ### ✔ Campaign Analytics  
+Data about notification sends and clicks is recorded to calculate metrics such as CTR (Click-Through Rate).
 - Total notifications delivered  
 - Unique user clicks  
-- Click-Through Rate (CTR)  
 - Lock-specific behavior insights  
 
 ---
@@ -178,3 +177,4 @@ SELECT
 ---
 
 
+This project was developed as part of an assignment based on backend automation, notification systems, and tracking workflows.
