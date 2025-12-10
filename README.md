@@ -6,6 +6,20 @@ This project automates weekly reminders for users who have **not checked their s
 It integrates **DynamoDB**, **PostgreSQL**, **Firebase Cloud Messaging (FCM)**, and a **click-tracking microservice** to measure user engagement.
 ---
 
+# Battery-notify (Node.js)
+
+Quick start
+
+1. Copy files into a repo.
+2. Create `.env` from `.env.example` and fill values (PG connection, firebase credentials path, TRACKING_BASE_URL).
+3. Start local DBs: `docker-compose up -d`.
+4. Install deps: `npm install`.
+5. Create DB schema: `psql -U test -d battery -f sql/schema.sql` (or run with your DB client).
+6. Start tracker: `npm run tracker`.
+7. Run the send script (test): `npm run start`.
+
+Use `scan` script to just print stale locks & mappings during development: `npm run scan`.
+
 # ⭐ Features
 
 ### ✔ Automated Weekly Battery Reminder Notifications  
@@ -30,13 +44,6 @@ Tracks:
 - Unique user clicks  
 - Click-Through Rate (CTR)  
 - Lock-specific behavior insights  
-
-### ✔ Easy Deployment  
-Runs on:
-- Docker  
-- Local cron  
-- AWS Lambda + EventBridge  
-- GitHub Actions  
 
 ---
 
@@ -158,58 +165,8 @@ SELECT
 
 ---
 
-# 🧪 Testing With Ngrok (Optional)
-
-Expose tracking server publicly:
-
-```bash
-ngrok http 3000
-```
-
-Use as:
-
-```
-TRACKING_BASE_URL=https://<ngrok-id>.ngrok.io/track_click
-```
-
 ---
 
-# 🚀 Deployment Options
-
-### **1. AWS Lambda + EventBridge**
-- Best for auto-run weekly jobs  
-- Fully serverless  
-- Highly scalable  
-
-### **2. Cron Job (Linux / EC2 / VPS)**
-Simple example:
-
-```bash
-0 9 * * 1 cd /app/battery-notify && npm start
-```
-
-### **3. GitHub Actions**
-Weekly automation:
-
-```yaml
-schedule:
-  - cron: "0 9 * * 1"
-```
-
-### **4. Render / Railway / Heroku**
-Run click-tracking server easily.
-
----
-
-# ✨ Future Enhancements
-
-- Retry queue (Redis + BullMQ)  
-- Dashboards for analytics  
-- Multi-language notifications  
-- Sentry error logging  
-- Mobile deep-link testing tool  
-
----
 
 # 👨‍💻 Author
 
